@@ -658,12 +658,12 @@ MonoBehaviour:
   cameraController: {fileID: 963194229}
   gunController: {fileID: 1058093918}
   speed: 0.1
-  minAnimationAngle: 10
+  minAnimationAngle: 0.5
   anglesAnimationIntervals:
   - _start: -180
     _end: -157.5
-  - _start: 180
-    _end: 157.5
+  - _start: 157.5
+    _end: 180
   - _start: -157.5
     _end: -112.5
   - _start: -112.5

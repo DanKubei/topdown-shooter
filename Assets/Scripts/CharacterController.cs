@@ -32,11 +32,22 @@ public class CharacterController : MonoBehaviour
         transform.rotation = Quaternion.Euler(0,
             rotation,
             0);
+        if (rotation < 0)
+        {
+            rotation += 360;
+        }
         float difference = oldRotation - rotation;
-        print(difference);
+        if (difference > 200)
+        {
+            difference = 360 - difference;
+        }
+        if (difference < -200)
+        {
+            difference = -360 - difference;
+        }
         if (Mathf.Abs(difference) > minAnimationAngle)
         {
-            _selfAnimator.SetInteger("TurnDirection", (int)Mathf.Sign(difference));
+            _selfAnimator.SetInteger("TurnDirection", -(int)Mathf.Sign(difference));
         }
         else
         {
